@@ -11,35 +11,85 @@
   <!-- Cabeçalho com título e subtítulo -->
   <header class="cabecalho">
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano</p>
+    <p class="subtitulo">8º Ano — Turma 8C — Chamada nº 11</p>
   </header>
 
   <main class="conteudo">
 
-    <!-- Área dos cards de resumo -->
-    <section class="cards" id="cards">
-      <!-- Os cards serão preenchidos pelo JavaScript -->
+    <!-- Área de Acesso via PIN -->
+    <section id="area-login" class="area-login">
+      <h2>Acesso ao Boletim</h2>
+      <p class="info-aluno"><strong>Turma:</strong> 8C | <strong>Número:</strong> 11</p>
+      <div class="form-login">
+        <label for="campo-pin">Digite seu PIN:</label>
+        <input type="password" id="campo-pin" placeholder="****" maxlength="20" autocomplete="off" />
+        <button type="button" id="btn-entrar">Entrar</button>
+      </div>
+      <p id="msg-login" class="mensagem-status"></p>
     </section>
 
-    <!-- Tabela de disciplinas -->
-    <section class="tabela-container">
-      <table class="tabela-boletim">
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-          <!-- As linhas serão preenchidas pelo JavaScript -->
-        </tbody>
-      </table>
-    </section>
+    <!-- Conteúdo do Boletim (inicialmente oculto) -->
+    <div id="area-boletim" class="area-boletim" style="display: none;">
+
+      <div class="acoes-boletim">
+        <button type="button" id="btn-alternar-edicao" class="btn-acao">Alterar dados</button>
+      </div>
+
+      <!-- Formulário / Modal de Edição -->
+      <section id="area-edicao" class="area-edicao" style="display: none;">
+        <h3>Editar Notas e Faltas</h3>
+        <p class="aviso-edicao">Insira notas de 0 a 10 (ou deixe em branco) e faltas inteiras (≥ 0).</p>
+        <p id="msg-edicao" class="mensagem-status"></p>
+        <div class="tabela-container">
+          <table class="tabela-boletim tabela-edicao">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Faltas 1º</th>
+                <th>Faltas 2º</th>
+                <th>Faltas 3º</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-edicao">
+              <!-- Preenchido dinamicamente pelo JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="botoes-edicao">
+          <button type="button" id="btn-salvar" class="btn-salvar">Salvar alterações</button>
+          <button type="button" id="btn-cancelar" class="btn-cancelar">Cancelar</button>
+        </div>
+      </section>
+
+      <!-- Área dos cards de resumo -->
+      <section class="cards" id="cards">
+        <!-- Os cards serão preenchidos pelo JavaScript -->
+      </section>
+
+      <!-- Tabela de disciplinas -->
+      <section class="tabela-container">
+        <table class="tabela-boletim">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <!-- As linhas serão preenchidas pelo JavaScript -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
 
   </main>
 

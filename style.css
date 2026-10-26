@@ -14,6 +14,8 @@
   --cinza-borda: #dcdcdc;
   --texto: #222;
   --branco: #ffffff;
+  --erro: #d9534f;
+  --sucesso: #28a745;
 }
 
 /* ===== Corpo da página ===== */
@@ -49,6 +51,133 @@ body {
   padding: 16px;
 }
 
+/* ===== Área de Login / PIN ===== */
+.area-login {
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  padding: 24px;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.area-login h2 {
+  color: var(--roxo);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.info-aluno {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-login label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.form-login input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid var(--cinza-borda);
+  width: 100%;
+  max-width: 200px;
+}
+
+.form-login button, .btn-acao, .btn-salvar, .btn-cancelar {
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-login button:hover, .btn-acao:hover, .btn-salvar:hover {
+  background-color: var(--roxo-claro);
+}
+
+.mensagem-status {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+.mensagem-status.erro {
+  color: var(--erro);
+}
+
+.mensagem-status.sucesso {
+  color: var(--sucesso);
+}
+
+/* ===== Ações do Boletim & Edição ===== */
+.acoes-boletim {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.area-edicao {
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.area-edicao h3 {
+  color: var(--roxo);
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.aviso-edicao {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.tabela-edicao input {
+  width: 60px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid var(--cinza-borda);
+  font-size: 0.85rem;
+}
+
+.tabela-edicao input.campo-invalido {
+  border: 2px solid var(--erro);
+  background-color: #fff0f0;
+}
+
+.botoes-edicao {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.btn-cancelar {
+  background-color: #777;
+}
+
+.btn-cancelar:hover {
+  background-color: #555;
+}
+
 /* ===== Área dos cards ===== */
 .cards {
   display: grid;
@@ -62,7 +191,6 @@ body {
   border: 1px solid var(--cinza-borda);
   padding: 16px;
   text-align: center;
-  /* estilo simples e reto, sem sombra */
 }
 
 .card .titulo-card {
@@ -87,7 +215,7 @@ body {
 
 /* ===== Tabela ===== */
 .tabela-container {
-  overflow-x: auto; /* permite rolar a tabela no celular */
+  overflow-x: auto;
   background-color: var(--branco);
   border: 1px solid var(--cinza-borda);
 }
@@ -95,7 +223,7 @@ body {
 .tabela-boletim {
   width: 100%;
   border-collapse: collapse;
-  min-width: 640px; /* garante que não fique apertada */
+  min-width: 640px;
 }
 
 .tabela-boletim th,
@@ -115,7 +243,7 @@ body {
 }
 
 .tabela-boletim tbody tr:nth-child(even) {
-  background-color: #faf7fd; /* listra suave em lilás */
+  background-color: #faf7fd;
 }
 
 .tabela-boletim td:first-child {
@@ -162,5 +290,9 @@ body {
   .tabela-boletim td {
     padding: 8px;
     font-size: 0.8rem;
+  }
+  
+  .tabela-edicao input {
+    width: 45px;
   }
 }
