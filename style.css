@@ -276,7 +276,76 @@ body {
   padding: 12px;
 }
 
-/* ===== Ajustes para celular ===== */
+/* ===== Área de Gráficos ===== */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.grafico-card {
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grafico-card.card-perigo {
+  border: 2px solid var(--erro);
+  box-shadow: 0 0 8px rgba(217, 83, 79, 0.3);
+}
+
+.grafico-card h2 {
+  font-size: 0.95rem;
+  color: var(--roxo);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.cabecalho-card-faltas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cabecalho-card-faltas h2 {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.badge-perigo {
+  background-color: var(--erro);
+  color: var(--branco);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+}
+
+.grafico-container.container-medias {
+  height: 480px;
+}
+
+/* ===== Ajustes Responsivos ===== */
+@media (max-width: 992px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 600px) {
   .cabecalho h1 {
     font-size: 1.4rem;
@@ -294,5 +363,13 @@ body {
   
   .tabela-edicao input {
     width: 45px;
+  }
+
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container.container-medias {
+    height: 400px;
   }
 }
